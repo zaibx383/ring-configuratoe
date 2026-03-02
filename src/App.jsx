@@ -6,7 +6,7 @@ import Controller from "./Controller";
 import { Loader } from "@react-three/drei";
 
 function App() {
-  const [metalColor, setMetalColor] = useState("#ffffff");
+  const [metalColor, setMetalColor] = useState("#f2f3f7");
   const [bigDiamondColor, setBigDiamondColor] = useState("#ffffff");
 
   const [smallDiamondColor, setSmallDiamondColor] = useState("#ffffff");

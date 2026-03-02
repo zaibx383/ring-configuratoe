@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import { Ring } from "./Ring";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense } from "react";
 
 export default function Scene({
   metalColor,
@@ -14,6 +14,7 @@ export default function Scene({
 }) {
   return (
     <Canvas
+      shadows
       dpr={[1, 2]}
       style={{ width: "100vw", height: "100vh" }}
       camera={{ position: [0, 3.5, 8], fov: 40 }}
@@ -26,10 +27,18 @@ export default function Scene({
     >
       <Suspense fallback={null}>
         <color attach="background" args={["#0a0a0a"]} />
-        <Environment files="/back.hdr" background environmentIntensity={0.8} />
-        <directionalLight position={[5, 5, 5]} intensity={1.2} />
-        <directionalLight position={[5, 0, 4]} color={"white"} intensity={0.9} />
-        <directionalLight position={[-5, 3, -5]} intensity={0.8} />
+        <Environment files="/back.hdr" background environmentIntensity={1.0} />
+        <directionalLight
+          castShadow
+          position={[5, 6, 4]}
+          intensity={1.6}
+        />
+        <directionalLight
+          castShadow
+          position={[-4, 3, -5]}
+          intensity={0.7}
+        />
+        <directionalLight position={[0, 4, -4]} intensity={0.5} />
         <ambientLight intensity={0.2} />
 
         <Ring
@@ -41,9 +50,9 @@ export default function Scene({
 
       <EffectComposer multisampling={0}>
         <Bloom
-          luminanceThreshold={1.0}
+          luminanceThreshold={1.1}
           luminanceSmoothing={0.2}
-          intensity={0.35}
+          intensity={0.25}
         />
       </EffectComposer>
 

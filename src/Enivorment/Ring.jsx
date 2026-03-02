@@ -82,9 +82,9 @@ useEffect(() => {
           <TransitionMaterial
             transitionColor={metalColor}
             metalness={1}
-            roughness={0.25}
-            clearcoat={0.6}
-            clearcoatRoughness={0.15}
+            roughness={0.16}
+            clearcoat={0.9}
+            clearcoatRoughness={0.1}
           />
         </mesh>
       </group>
