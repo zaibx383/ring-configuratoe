@@ -49,11 +49,10 @@ useEffect(() => {
               <MeshRefractionMaterial
                 envMap={envMap}
                 color={bigDiamondColor}
-                bounces={5}
+                bounces={4}
                 ior={2.6}
-                aberrationStrength={0.025}
-                fresnel={1}
-                toneMapped={false}
+                aberrationStrength={0.02}
+                fresnel={0.8}
               />
             )}
           </mesh>
@@ -72,9 +71,8 @@ useEffect(() => {
               color={smallDiamondColor}
               bounces={3}
               ior={2.4}
-              aberrationStrength={0.015}
-              fresnel={1}
-              toneMapped={false}
+              aberrationStrength={0.012}
+              fresnel={0.9}
             />
           )}
         </mesh>
@@ -84,9 +82,9 @@ useEffect(() => {
           <TransitionMaterial
             transitionColor={metalColor}
             metalness={1}
-            roughness={0.15}
-            clearcoat={1}
-            clearcoatRoughness={0}
+            roughness={0.25}
+            clearcoat={0.6}
+            clearcoatRoughness={0.15}
           />
         </mesh>
       </group>

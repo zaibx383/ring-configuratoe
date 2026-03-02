@@ -17,7 +17,7 @@ function App() {
     if (!controlsRef.current) return;
     const controls = controlsRef.current;
     // Move camera to minDistance position
-    controls.object.position.set(0, 0, 4.5);
+    controls.object.position.set(0, 0, 3);
     controls.target.set(0, 0, 0);
     controls.update();
   };
